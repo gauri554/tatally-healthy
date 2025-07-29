@@ -1,0 +1,167 @@
+.container {
+  position: absolute;
+  height: 1200px;
+  left: 288px;
+  right: 0;
+  top: 79px;
+  background: white;
+  color:black;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  overflow-y: auto;
+}
+
+.topCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+   justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 200px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.middleRow {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.graphBox, .stockBox {
+  flex: 1;
+  background: #fff;
+  padding: 16px;
+  color: black;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  flex: 1;
+  margin-left: 20px;
+  min-width: 300px;
+}
+
+.placeholder {
+  height: 200px;
+  background: #f2f2f2;
+  margin-top: 10px;
+  color: black;
+  border-radius: 8px;
+}
+
+.bottomRow {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.pieChart {
+  width: 30%;
+  background: #fff;
+  color: rgb(165, 36, 36);
+  height: 300px;
+  padding: 16px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.recentTables {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+
+
+.stockBox h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333333;
+}
+
+.stockBox table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.stockBox th,
+.stockBox td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.stockBox th {
+  background-color: #f6f6f6;
+  font-weight: 600;
+}
+
+.stockBox tr:hover {
+  background-color: #f9f9f9;
+}
+
+.recentTables h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333333;
+}
+
+.recentTables table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.recentTables th,
+.recentTables td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.recentTables th {
+  background-color: #f6f6f6;
+  font-weight: 600;
+}
+
+.recentTables tr:hover {
+  background-color: #f9f9f9;
+}
+
+
+.card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.card span {
+  font-size: 12px;
+  color: #666;
+}
