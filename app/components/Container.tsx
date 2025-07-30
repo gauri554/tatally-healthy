@@ -1,4 +1,4 @@
-'use client';
+/*'use client';
 import React from 'react';
 import styles from './Container.module.css';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
@@ -134,4 +134,4 @@ const Container = () => {
   );
 };
 
-export default Container;
+export default Container;*/
