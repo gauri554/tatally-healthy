@@ -9,13 +9,9 @@ import RecentRegister from './components/RecentRegister';
 
 export default function DashboardPage() {
   return (
-    <main className="flex w-full min-h-screen bg-[#F8F9FA]">
-      <Sidebar />
-
-      <div className="flex-1 p-4">
-        <Header />
-
-        {/* Stat Cards */}
+   
+<>
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4 my-6 text-gray-600">
           <StatCard color="blue" label="Ventas Totales" value="S/101.91M" change="+S/3.81M Este Mes" icon="bar" />
           <StatCard color="orange" label="Compra Total" value="S/80.97M" change="+S/7.29M Este Mes" icon="bag" />
@@ -27,7 +23,7 @@ export default function DashboardPage() {
           <StatCard color="pink" label="Devoluciones de Compras" value="S/70" change="+S/0 Este Mes" icon="redo" />
         </div>
 
-        {/* Charts & Summary */}
+      
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mb-6">
           <div className="xl:col-span-2">
             <FinanceOverview />
@@ -37,16 +33,14 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Table */}
+      
         <RecentRegister />
 
-        {/* Footer */}
         <footer className="mt-6 text-center text-sm text-gray-500">
           © 2023 Totally Healthy, all rights reserved.
           <br />
           Development by <span className="text-green-500 font-medium">Totally Healthy</span>
         </footer>
-      </div>
-    </main>
+   </>
   );
 }
