@@ -7,13 +7,17 @@ import {
   FaList,
   FaBoxOpen,
   FaUserCog,
-  FaFileAlt,
   FaCog,
   FaChevronDown,
   FaChevronUp,
 } from 'react-icons/fa';
 
-const Sidebar = () => {
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const toggleSubmenu = (label: string) => {
@@ -39,22 +43,36 @@ const Sidebar = () => {
         { label: "Roles", href: "/staff/manage" },
       ],
     },
-  
     {
       icon: <FaCog />,
       label: "Settings",
       submenu: [
         { label: "Currencies", href: "/setting/currencies" },
         { label: "Payment Gateway", href: "/setting/payment" },
-         { label: "System Settings", href: "/setting/system" },
-          { label: "General Settings", href: "/setting/general" },
+        { label: "System Settings", href: "/setting/system" },
+        { label: "General Settings", href: "/setting/general" },
       ],
     },
   ];
 
   return (
-    <div className="min-h-screen w-56 bg-black text-white p-4 flex flex-col gap-6">
+    <div
+      className={`
+       bg-black text-white w-56 p-4 flex flex-col gap-6  h-full z-40 
+        fixed top-0 left-0 transition-transform duration-300 
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+        md:translate-x-0 md:relative 
+      `}
+    >
+      {/* Mobile Close Button */}
+      <div className="flex justify-end md:hidden">
+        <button onClick={onClose} className="text-white text-2xl font-bold">
+          &times;
+        </button>
+      </div>
+
       <div className="text-lg font-semibold mb-6">Totally Healthy</div>
+
       <ul className="flex flex-col gap-4">
         {menuItems.map((item, index) => (
           <li key={index}>
@@ -107,4 +125,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Sidebar; 
