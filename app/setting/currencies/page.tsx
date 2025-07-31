@@ -61,53 +61,54 @@ export default function CurrencyList() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-
-      <ScrollArea className="rounded-md border">
-        <table className="min-w-full text-sm text-left">
-          <thead className="bg-gray-100 text-gray-700">
-            <tr>
-              <th className="p-2"><input type="checkbox" /></th>
-              <th className="p-2">SL.</th>
-              <th className="p-2">Name</th>
-              <th className="p-2">Code</th>
-              <th className="p-2">Rate</th>
-              <th className="p-2">Symbol</th>
-              <th className="p-2">Status</th>
-              <th className="p-2">Default</th>
-              <th className="p-2">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((c, idx) => (
-              <tr key={idx} className="border-t">
-                <td className="p-2"><input type="checkbox" /></td>
-                <td className="p-2">{idx + 1}</td>
-                <td className="p-2">{c.name}</td>
-                <td className="p-2">{c.code}</td>
-                <td className="p-2">{c.rate}</td>
-                <td className="p-2">{c.symbol}</td>
-                <td className="p-2">
-                  <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded">
-                    {c.status}
-                  </span>
-                </td>
-                <td className="p-2">
-                  <span
-                    className={`px-2 py-1 text-xs font-medium rounded ${
-                      c.isDefault === "Yes"
-                        ? "bg-green-500 text-white"
-                        : "bg-red-500 text-white"
-                    }`}
-                  >
-                    {c.isDefault}
-                  </span>
-                </td>
-                <td className="p-2 text-center text-xl">⋮</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </ScrollArea>
+<div className="w-full overflow-x-auto">
+    <ScrollArea className="min-w-[800px] rounded-md border">
+    <table className="min-w-full text-sm text-left">
+      <thead className="bg-gray-100 text-gray-700">
+        <tr>
+          <th className="p-2"><input type="checkbox" /></th>
+          <th className="p-2">SL.</th>
+          <th className="p-2">Name</th>
+          <th className="p-2">Code</th>
+          <th className="p-2">Rate</th>
+          <th className="p-2">Symbol</th>
+          <th className="p-2">Status</th>
+          <th className="p-2">Default</th>
+          <th className="p-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filtered.map((c, idx) => (
+          <tr key={idx} className="border-t">
+            <td className="p-2"><input type="checkbox" /></td>
+            <td className="p-2">{idx + 1}</td>
+            <td className="p-2">{c.name}</td>
+            <td className="p-2">{c.code}</td>
+            <td className="p-2">{c.rate}</td>
+            <td className="p-2">{c.symbol}</td>
+            <td className="p-2">
+              <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded">
+                {c.status}
+              </span>
+            </td>
+            <td className="p-2">
+              <span
+                className={`px-2 py-1 text-xs font-medium rounded ${
+                  c.isDefault === "Yes"
+                    ? "bg-green-500 text-white"
+                    : "bg-red-500 text-white"
+                }`}
+              >
+                {c.isDefault}
+              </span>
+            </td>
+            <td className="p-2 text-center text-xl">:</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </ScrollArea>
+    </div>
 
       <footer className="text-xs text-gray-500 text-center pt-4">
         © 2023 Totally Healthy, all rights reserved. <br />
